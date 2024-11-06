@@ -1,15 +1,12 @@
 import { Hono } from 'hono'
-import { renderer } from './renderer'
 import modules from './modules'
 import { MODULES } from './constants'
 
 const app = new Hono<{ Bindings: Bindings }>()
 
-app.use(renderer)
-
 app.get('/', async (c) => {
   await c.env.KV.put('shopify', JSON.stringify([]))
-  return c.render(<h1>Tech Feeds</h1>)
+  return c.text('Tech Feeds')
 })
 
 app.route('/modules', modules)

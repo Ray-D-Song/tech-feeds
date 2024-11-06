@@ -8,4 +8,3 @@ modules.route('/notion', notion)
 modules.route('/shopify', shopify)
 
 export default modules
-      
