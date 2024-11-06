@@ -1,0 +1,3 @@
+type Bindings = {
+  KV: KVNamespace
+}
